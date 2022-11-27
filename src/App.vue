@@ -1,30 +1,57 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <navigation/>
+  <router-view></router-view>
+<app-footer/>
 </template>
 
+<script>
+import AppFooter from './components/AppFooter.vue'
+import Navigation from './components/Navigation.vue'
+
+  export default {
+  components: { Navigation, AppFooter },
+  
+  data() {
+    return {
+    }
+  },
+
+  methods: {
+
+  },
+
+  computed: {
+   
+  },
+
+  watch: {
+
+  }
+
+  }
+</script>
+
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@400;500;700&display=swap');
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Ubuntu', sans-serif;
+  font-style: normal;
+  line-height: 100%;
+  font-size: 18px;
 }
 
-nav {
-  padding: 30px;
-
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+.router__link_item {
+  &:visited {
+    color: inherit;
+  }
+  &:link {
+    text-decoration: none;
   }
 }
+
 </style>
