@@ -12,7 +12,5 @@
         {"title": "ASTER N400P LVIZON LVIZON", "id": 10, "madeIn": "Kazakhstan", "discount": 0, "new": true, "price": 140000, "size": "60x100", "reviews": 15, "rating": 1 },
         {"title": "ASTER N521B LVIZON LVIZON", "id": 11, "madeIn": "Kazakhstan", "discount": 0, "new": true, "price": 155000, "size": "60x100", "reviews": 4, "rating": 3 },
         {"title": "ASTER N892A LVIZON LVIZON", "id": 12, "madeIn": "Kazakhstan", "discount": 0, "new": true, "price": 160000, "size": "60x100", "reviews": 1, "rating": 4 },
-       ],
-
-
+       ]
 }
