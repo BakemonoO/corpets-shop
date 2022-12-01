@@ -5,17 +5,48 @@
   </div>
 
   <div class="shop">
-    <shop-filter></shop-filter>
-    <shop-list></shop-list>
+    <shop-filter
+    :maded="maded"
+    :sized="sized"
+    ></shop-filter>
+    <shop-list
+    :corpets="corpetsArray"
+    ></shop-list>
   </div>
 </template>
 
 <script>
+import axios from 'axios'
 import ShopFilter from '@/components/ShopFilter.vue'
 import ShopList from '@/components/ShopList.vue'
   export default {
   components: { ShopFilter, ShopList },
     
+  data() {
+      return {
+        corpetsArray: [],
+        maded: [],
+        sized: []
+      }
+    },
+
+
+  methods: {
+    async getCorpetsItem() {
+      const response = await axios.get('https://my-json-server.typicode.com/bakemonoo/corpets-shop/corpets/')
+      this.corpetsArray = response.data
+
+      this.corpetsArray.map(x => this.maded.push(x.madeIn))
+      this.maded = this.maded.filter((x,i,arr) => i === arr.indexOf(x))
+
+      this.corpetsArray.map(x => this.sized.push(x.size))
+      this.sized = this.sized.filter((x,i,arr) => i === arr.indexOf(x))
+    }
+  },
+
+  mounted() {
+    this.getCorpetsItem()
+  }
   }
 </script>
 
@@ -33,7 +64,7 @@ import ShopList from '@/components/ShopList.vue'
 .shop {
   display: flex;
   justify-content: space-between;
-  margin: 25px 80px;
+  margin: 25px 0 0 80px;
 }
 
 </style>

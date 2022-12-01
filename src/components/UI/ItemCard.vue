@@ -120,12 +120,11 @@
 <style lang="scss" scoped>
 
 .card {
-  width: 290px;
-  min-width: 290px;
+  width: 270px;
+  min-width: 270px;
   height: 525px;
   box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
   border-radius: 10px;
-  margin: 20px;
 }
 
 .promotion-favorite {

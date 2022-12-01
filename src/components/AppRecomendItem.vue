@@ -19,6 +19,7 @@
     v-for="corpet in corpets"
     :key="corpet.id"
     :corpet="corpet"
+    style="margin: 20px"
     />
     </div>
   </div>
@@ -49,6 +50,7 @@
 .recomend__item {
   height: 605px;
   margin-top: 50px;
+
 }
 
 .recomend__item_info {
@@ -82,7 +84,7 @@
   display: flex;
   justify-content: space-between;
   overflow: auto;
-  margin: 0 60px;
+  margin-left: 60px;
   overflow-x: hidden;
 }
 

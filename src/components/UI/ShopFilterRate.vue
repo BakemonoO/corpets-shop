@@ -3,10 +3,12 @@
     <div class="rate__area">
       <div class="rate__info">
       <div>Фильтр</div>
-      <div class="area__info_clear">Сбросить</div>
+      <div class="area__info_clear"
+      @click="clearValue">Сбросить</div>
       </div>
 
-    <div class="area__result">Найдно 55 товаров</div>
+    <div class="area__result"
+    >Найдно 55 товаров</div>
     
     <div class="area__price">
       <div class="area__price_name">
@@ -14,8 +16,20 @@
       <p class="price__name_currency">тенге</p>
     </div>
     <div class="area__price_range">
-      <input type="range" min="0" max="400000" step="1000" v-model="minValue" class="price__range_min price__range">
-      <input type="range" min="0" max="400000" step="1000" v-model="maxValue" class="price__range_max price__range">
+      <input type="range" 
+      min="0" 
+      max="400000" 
+      step="1000" 
+      v-model.number="minValue"
+      class="price__range_min price__range"
+      >
+      <input type="range" 
+      min="0" 
+      max="400000" 
+      step="1000" 
+      v-model.number="maxValue" 
+      class="price__range_max price__range"
+      >
     </div>
     <div class="price__range_info">
       <div class="range__info_item">{{ minValue }}</div>
@@ -31,12 +45,28 @@
 <script>
   export default {
     name: 'shop-filter-rate',
-
+ 
     data() {
       return {
         minValue: 0,
         maxValue: 400000
       }
+    },
+    methods: {
+      clearValue() {
+        this.minValue = 0
+        this.maxValue = 400000
+      },
+    },
+
+    watch: {
+      minValue() {
+        this.minValue > this.maxValue ? this.minValue = this.maxValue - 10000 : false
+      },
+
+      maxValue() {
+        this.minValue > this.maxValue ? this.minValue = this.maxValue - 10000 : false
+      },
     }
   }
 </script>
@@ -89,6 +119,7 @@
 .area__price_range {
   width: 285px;
   position: relative;
+  height: 1px;
   
 }
 

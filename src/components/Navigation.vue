@@ -24,8 +24,4 @@ import NavigationMenu from './NavigationMenu.vue'
 
 <style lang="scss" scoped>
 
-// .navigation {
-//   width: 100vw;
-// }
-
 </style>

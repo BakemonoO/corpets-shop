@@ -38,7 +38,6 @@ import RecomendationButton from './UI/RecomendationButton.vue'
 .recomendation {
   background: #618C78;
   height: 600px;
-  // width: 100vw;
 }
 
 .recomend-corps {
