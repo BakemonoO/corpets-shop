@@ -46,6 +46,12 @@ import Navigation from './components/Navigation.vue'
   font-style: normal;
   line-height: 100%;
   font-size: 18px;
+  font-weight: 400;
+}
+
+h1 {
+  font-size: 40px;
+  line-height: 145%;
 }
 
 .router__link_item {

@@ -13,6 +13,8 @@
       v-for="corpet in corpets"
       :key="corpet.id"
       :corpet="corpet"
+      style="marginBottom: 2em"
+      @click="$router.push(`/shop-corpets/${corpet.id}`)"
     />
     </div>
    

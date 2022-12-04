@@ -41,7 +41,7 @@
         height="15"
         v-for="star in fullyStar"
         :key="star">
-        <p>{{corpet.reviews}}</p>
+        <p>{{corpet.reviews}} отзывов</p>
       </div>
 
       <div class="item__price">

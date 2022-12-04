@@ -1,5 +1,6 @@
 import Main from '@/pages/Main'
 import ShopCorpets from '@/pages/ShopCorpets'
+import CorpetItemPage from '@/pages/CorpetItemPage'
 import { createRouter, createWebHashHistory } from 'vue-router'
 
 const routes = [
@@ -10,6 +11,10 @@ const routes = [
   {
     path: '/shop-corpets',
     component: ShopCorpets
+  },
+  {
+    path: '/shop-corpets/:id',
+    component: CorpetItemPage
   }
 ]
 
