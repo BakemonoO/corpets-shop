@@ -47,6 +47,10 @@ import Navigation from './components/Navigation.vue'
   line-height: 100%;
   font-size: 18px;
   font-weight: 400;
+  svg {
+    fill: inherit;
+    stroke: inherit;
+  }
 }
 
 h1 {
@@ -61,6 +65,12 @@ h1 {
   &:link {
     text-decoration: none;
   }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 </style>

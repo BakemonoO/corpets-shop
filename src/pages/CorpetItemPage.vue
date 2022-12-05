@@ -1,54 +1,60 @@
 <template>
 <div class="loader"
-v-if="corpetItem === null"></div>
-<div
-v-else>
+v-if="corpetItem === null">
+</div>
+
+<div v-else>
 <div class="routes__way">
-    <router-link class="router__link_item" style="color: gray;" to="/">Главная /</router-link>
-    <router-link class="router__link_item" style="color: gray;" to="/shop-corpets">Ковры /</router-link>
-    <p class="router__link_item" style="color: #618C78">{{corpetItem.title}}</p>
-  </div>
+  <router-link class="router__link_item" style="color: gray;" to="/">Главная /</router-link>
+  <router-link class="router__link_item" style="color: gray;" to="/shop-corpets">{{corpetItem.category}} /</router-link>
+  <p class="router__link_item" style="color: #618C78">{{corpetItem.title}}</p>
+</div>
 
 <div class="corpet__item">
 <h1>{{ corpetItem.title }}</h1>
-<div class="corpet__item_status">
- <div class="item__rating">
-        <img src="../img/StarTrue.svg" alt="звезды"
-        width="15"
-        height="15"
-        v-for="star in corpetItem.rating"
-        :key="star">
-        <img 
-        src="../img/Star.svg" alt="звезды"
-        width="15"
-        height="15"
-        v-for="star in fullyStar"
-        :key="star">
-        <p>{{corpetItem.reviews}} отзывов</p>
-      </div>
+  <div class="corpet__item_status">
+    <div class="item__rating">
+      <img src="../img/StarTrue.svg" alt="звезды"
+      width="15"
+      height="15"
+      v-for="star in corpetItem.rating"
+      :key="star">
+      <img 
+      src="../img/Star.svg" alt="звезды"
+      width="15"
+      height="15"
+      v-for="star in fullyStar"
+      :key="star">
+      <p>{{corpetItem.reviews}} отзывов</p>
+    </div>
+  </div>
 </div>
-</div>
+
 <div class="corpet__item_date">
   <div class="images">
-    <item-page-images/>
+    <item-page-images
+    :images="corpetImages"
+    />
     </div>
+    <item-page-info
+    :item="corpetItem"
+    />
     </div>
-
-
 </div>
-
-
 
 </template>
 
 <script>
 import axios from 'axios'
 import ItemPageImages from '@/components/ItemPageImages.vue'
+import ItemPageInfo from '@/components/ItemPageInfo.vue'
   export default {
-  components: { ItemPageImages },
+  components: { ItemPageImages, ItemPageInfo },
+
     data() {
       return {
         corpetItem: null,
+        corpetImages: ['https://a.lmcdn.ru/product/M/P/MP002XU04DGD_14906471_2_v1.jpeg', 'https://a.lmcdn.ru/product/M/P/MP002XU04DGD_14906468_3_v1.jpeg', 'https://a.lmcdn.ru/product/M/P/MP002XU04DGD_14906469_4_v1.jpeg']
       }
     },
     
@@ -56,7 +62,6 @@ import ItemPageImages from '@/components/ItemPageImages.vue'
       async getCorpetItem() {
         const response = await axios.get(`https://my-json-server.typicode.com/bakemonoo/corpets-shop/corpets/${this.$route.params.id}`)
         this.corpetItem = response.data
-        console.log(this.corpetItem)
 
       }
     },
@@ -138,5 +143,14 @@ import ItemPageImages from '@/components/ItemPageImages.vue'
     transform: rotate(360deg);
   }
 }
+
+.corpet__item_date {
+  display: flex;
+  justify-content: space-between;
+  margin: 25px 80px 0 80px;
+  width: inherit
+}
+
+// .corpet__item_images
 
 </style>

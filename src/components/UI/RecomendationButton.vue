@@ -29,7 +29,7 @@
     border-color: #ca3737;
   }
   &:active {
-    transform: scale(0.9);
+    transform: scale(0.98);
     transition: transform 0.05s ease;
   }
 }
