@@ -12,6 +12,12 @@ v-for="image in images"
 <div class="current__image"
 :style="`background: url(${currentImage}) center; background-size: 620px`"
 >
+<div class="info__message"
+v-if="item.discount > 0 || item.new === true"
+>
+<p v-if="item.discount > 0">{{item.discount}} %</p>
+<p v-else>Новинка</p>
+</div>
 </div>
   
 </div>
@@ -23,7 +29,8 @@ v-for="image in images"
     name: 'item-page-images',
 
     props: {
-      images: Array
+      images: Array,
+      item: Object
     },
 
     data() {
@@ -76,6 +83,23 @@ height: 620px;
 height: 620px;
 width: 620px;
 border-radius: 20px;
+}
+
+.info__message {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #618C78;
+  width: 115px;
+  height: 30px;
+  margin-top: 20px;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  p {
+    color: white;
+    font-size: 18px;
+    line-height: 130%;
+  }
 }
 
 </style>

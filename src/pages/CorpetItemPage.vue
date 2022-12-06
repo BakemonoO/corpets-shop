@@ -34,12 +34,18 @@ v-if="corpetItem === null">
   <div class="images">
     <item-page-images
     :images="corpetImages"
+    :item="corpetItem"
     />
     </div>
     <item-page-info
     :item="corpetItem"
     />
     </div>
+  <div class="corpet__item_tabs">
+    <item-page-tabs
+    :item="corpetItem"
+    />
+  </div>
 </div>
 
 </template>
@@ -48,8 +54,9 @@ v-if="corpetItem === null">
 import axios from 'axios'
 import ItemPageImages from '@/components/ItemPageImages.vue'
 import ItemPageInfo from '@/components/ItemPageInfo.vue'
+import ItemPageTabs from '@/components/ItemPageTabs.vue'
   export default {
-  components: { ItemPageImages, ItemPageInfo },
+  components: { ItemPageImages, ItemPageInfo, ItemPageTabs },
 
     data() {
       return {
@@ -147,10 +154,8 @@ import ItemPageInfo from '@/components/ItemPageInfo.vue'
 .corpet__item_date {
   display: flex;
   justify-content: space-between;
-  margin: 25px 80px 0 80px;
+  margin: 25px 80px 65px 80px;
   width: inherit
 }
-
-// .corpet__item_images
 
 </style>
