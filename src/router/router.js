@@ -1,7 +1,7 @@
 import Main from '@/pages/Main'
 import ShopCorpets from '@/pages/ShopCorpets'
 import CorpetItemPage from '@/pages/CorpetItemPage'
-import { createRouter, createWebHashHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
   {
@@ -19,8 +19,8 @@ const routes = [
 ]
 
 const router = createRouter({
-  routes,
-  history: createWebHashHistory(process.env.BASE_UURL)
+  history: createWebHistory(process.env.BASE_URL),
+  routes
 })
 
 export default router;

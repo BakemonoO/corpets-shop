@@ -70,6 +70,7 @@ h1 {
 .app {
   display: flex;
   flex-direction: column;
+  flex: 1;
   min-height: 100vh;
 }
 

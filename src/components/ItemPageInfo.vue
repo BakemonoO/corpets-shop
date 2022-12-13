@@ -104,10 +104,10 @@
 
     computed: {
       newPrice() {
-        return Math.ceil(this.item.price * ( 1 - this.item.discount / 100))
+        return Math.ceil(this.item.price * ( 1 - this.item.discount / 100)) * this.pcs
     },
       creditCalculation() {
-        return Math.floor(this.item.price / 12)
+        return Math.floor((this.item.price * this.pcs) / 12) 
       },
   }
 }

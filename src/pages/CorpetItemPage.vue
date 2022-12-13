@@ -158,4 +158,8 @@ import ItemPageTabs from '@/components/ItemPageTabs.vue'
   width: inherit
 }
 
+.corpet__item_tabs {
+  margin: 0 80px 0 80px;
+}
+
 </style>
