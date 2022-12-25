@@ -3,5 +3,6 @@ module.exports = defineConfig({
   devServer: {
     allowedHosts: "all",
   },
-  transpileDependencies: true
+  transpileDependencies: true,
+  publicPath: '/bakemonoo/corpets-shop/'
 })
