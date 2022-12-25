@@ -4,5 +4,7 @@ module.exports = defineConfig({
     allowedHosts: "all",
   },
   transpileDependencies: true,
-  publicPath: '/corpets-shop/'
+  publicPath: process.env.NODE_ENV === 'production'
+  ? '/corpets-shop/'
+  : '/'
 })
