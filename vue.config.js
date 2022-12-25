@@ -4,5 +4,5 @@ module.exports = defineConfig({
     allowedHosts: "all",
   },
   transpileDependencies: true,
-  publicPath: '/bakemonoo/corpets-shop/'
+  publicPath: ''
 })
