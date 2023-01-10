@@ -69,8 +69,8 @@ import ItemPageTabs from '@/components/ItemPageTabs.vue'
       async getCorpetItem() {
         const response = await axios.get(`https://my-json-server.typicode.com/bakemonoo/corpets-shop/corpets/${this.$route.params.id}`)
         this.corpetItem = response.data
+      },
 
-      }
     },
     computed: {
       creditCalculation() {

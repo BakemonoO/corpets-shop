@@ -7,6 +7,7 @@
 
       <div class="title__item"
       :class="{'active': currentComponent === 'item-credit'}"
+      :item="item"
       @click="currentComponent = 'item-credit'">Купить в рассрочку</div>
 
       <div class="title__item"
