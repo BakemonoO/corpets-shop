@@ -46,7 +46,7 @@
   display: grid;
   grid-template-columns: 1.5fr 1fr;
   width: 400px;
-  border-bottom: 1.5px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1.5px dotted rgba(0, 0, 0, 0.5);
   padding-bottom: 15px;
   margin-bottom: 15px;
   .property__title {

@@ -11,7 +11,7 @@
     :key="comments.id"
     >
     <div class="reviews__list_item"
-    :class="comments.id === itemComment.length ? 'non_border' : ''"
+    :class="comments.id === 1 ? 'non_border' : ''"
     >
       <div class="list__item_info">
         <img src="http://zornet.ru/_fr/19/9367479.png" width="100" height="100">
@@ -44,7 +44,7 @@
     methods: {
       async getComment() {
       const comment = await axios.get(`https://jsonplaceholder.typicode.com/comments?_limit=${this.item.reviews}`)
-      this.itemComment = comment.data
+      this.itemComment = comment.data.reverse()
       for (let i = 0; i < this.itemComment.length; i++) {
         let names = this.itemComment[i].email.match(/[A-Za-z._-]+/g)
         this.itemComment[i].shortName = names[0]
@@ -93,7 +93,7 @@
   display: flex;
   margin-bottom: 30px;
   padding-bottom: 20px;
-  border-bottom: 1.46303px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1.5px dotted rgba(0, 0, 0, 0.3);
 }
 
 .list__item_info {

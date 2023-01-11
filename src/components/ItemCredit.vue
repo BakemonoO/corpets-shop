@@ -68,7 +68,7 @@
 .credit__property {
   display: grid;
   grid-template-columns: 3fr 1fr;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.5);
+  border-bottom: 1.5px dotted rgba(0, 0, 0, 0.5);
   margin-bottom: 20px;
   padding-bottom: 10px;
 }

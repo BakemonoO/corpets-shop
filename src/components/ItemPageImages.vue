@@ -15,7 +15,7 @@ v-for="image in images"
 <div class="info__message"
 v-if="item.discount > 0 || item.new === true"
 >
-<p v-if="item.discount > 0">{{item.discount}} %</p>
+<p v-if="item.discount > 0">-{{item.discount}} %</p>
 <p v-else>Новинка</p>
 </div>
 </div>
